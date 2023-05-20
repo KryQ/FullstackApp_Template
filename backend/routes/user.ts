@@ -1,11 +1,10 @@
-import {User} from "../entities/DisplayEntity.js";
-import Fastify from "fastify";
+import {FastifyError, FastifyInstance, FastifyPluginOptions} from "fastify";
+import fp from "fastify-plugin";
 import {z} from "zod";
 
-const UserRoute = (
-	fastify: Fastify.FastifyInstance,
-	options: Fastify.RouteOptions,
-	done: Fastify.DoneFuncWithErrOrRes) => {
+import {User} from "../entities/DisplayEntity.js";
+
+export default fp(async (fastify: FastifyInstance, options: FastifyPluginOptions, done: (error?: FastifyError) => void): Promise<void> => {
 	fastify.get('/user', async (request, reply) => {
 		return User.find();
 	})
@@ -27,6 +26,4 @@ const UserRoute = (
 	})
 
 	done();
-};
-
-export default UserRoute;
+});

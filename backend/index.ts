@@ -1,4 +1,5 @@
 import Fastify from "fastify";
+import FastifyStatic from "@fastify/static";
 import "reflect-metadata"
 
 import db from "./db.js";
@@ -9,13 +10,17 @@ const fastify = Fastify({
 	logger: true
 });
 
+fastify.register(FastifyStatic, {
+	root: `${process.cwd()}/public`,
+	prefix: '/public'
+});
+
 fastify.register(UserRoute, {prefix: '/rest'});
 fastify.register(DeviceRoute, {prefix: '/rest'});
 
-// Declare a route
-fastify.get('/', async (request, reply) => {
-	return {hello: 'world'}
-})
+fastify.get('/*', async (request, reply) => {
+	return reply.sendFile('index.html');
+});
 
 // Run the server!
 const start = async () => {
