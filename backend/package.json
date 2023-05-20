@@ -1,0 +1,23 @@
+{
+  "name": "backend",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "KryQ",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@types/node": "^20.2.1",
+    "ts-node": "^10.9.1"
+  },
+  "dependencies": {
+    "fastify": "^4.17.0",
+    "reflect-metadata": "^0.1.13",
+    "sqlite3": "^5.1.6",
+    "typeorm": "^0.3.16",
+    "zod": "^3.21.4"
+  }
+}
