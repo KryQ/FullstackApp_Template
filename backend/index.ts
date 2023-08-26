@@ -2,9 +2,9 @@ import Fastify from "fastify";
 import FastifyStatic from "@fastify/static";
 import "reflect-metadata"
 
-import db from "./db.js";
-import UserRoute from "./routes/user.js";
-import DeviceRoute from "./routes/device.js";
+import db from "./db";
+import UserRoute from "./routes/user";
+import DeviceRoute from "./routes/device";
 
 const fastify = Fastify({
 	logger: true

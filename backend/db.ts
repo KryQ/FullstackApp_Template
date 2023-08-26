@@ -1,5 +1,5 @@
 import {DataSource} from "typeorm";
-import {User} from "./entities/DisplayEntity.js";
+import {User} from "./entities/DisplayEntity";
 
 const db = new DataSource({
 	type: "sqlite",

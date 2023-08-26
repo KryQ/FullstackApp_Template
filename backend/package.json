@@ -3,9 +3,10 @@
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
-    "fetchFrontend": "cd ../frontend && npm run build && cp -r dist/* ../backend/public"
+    "fetchFrontend": "cd ../frontend && npm run build && mkdir ../backend/dist/public && cp -r dist/* ../backend/dist/public",
+    "build": "rm -rf ./dist && tsc && npm run fetchFrontend",
+    "dev": "ts-node index.ts"
   },
   "author": "KryQ",
   "license": "UNLICENSED",

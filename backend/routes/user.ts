@@ -2,7 +2,7 @@ import {FastifyError, FastifyInstance, FastifyPluginOptions} from "fastify";
 import fp from "fastify-plugin";
 import {z} from "zod";
 
-import {User} from "../entities/DisplayEntity.js";
+import {User} from "../entities/DisplayEntity";
 
 export default fp(async (fastify: FastifyInstance, options: FastifyPluginOptions, done: (error?: FastifyError) => void): Promise<void> => {
 	fastify.get('/user', async (request, reply) => {
