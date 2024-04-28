@@ -1,11 +1,11 @@
 import {DataSource} from "typeorm";
-import {User} from "./entities/DisplayEntity.js";
+import DisplayEntity from "./entities/DisplayEntity.js";
 
 const db = new DataSource({
 	type: "sqlite",
 	database: "database.sqlite",
 	entities: [
-		User
+		DisplayEntity
 	],
 	synchronize: true,
 	logging: false

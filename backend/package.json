@@ -5,7 +5,12 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "fetchFrontend": "cd ../frontend && npm run build && cp -r dist/* ../backend/public"
+    "watch": "tsc -w",
+    "dev": "node --watch ./dist/index.js",
+    "clear": "rm -rf ./dist",
+    "copyAssets": "mkdir -p ./dist/public && cp -r ./src/public ./dist/",
+    "fetchFrontend": "cd ../frontend && npm run build && cp -r dist/* ../backend/dist/public",
+    "build": "tsc && npm run copyAssets && npm run fetchFrontend"
   },
   "author": "KryQ",
   "license": "UNLICENSED",
